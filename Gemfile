@@ -1,8 +1,20 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+#gem 'rails', '4.2.1'
 
-gem 'sqlite3'
+ gem 'rails', '4.2.4'
+ 
+ # #1
+ group :production do
+   gem 'pg'
+   gem 'rails_12factor'
+ end
+ 
+ # #2
+ group :development do
+   gem 'sqlite3'
+   #gem 'pg'
+ end
 
 gem 'sass-rails', '~> 5.0'
 
@@ -13,6 +25,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+
 
 group :doc do
   gem 'sdoc',require: false
@@ -26,3 +39,4 @@ end
 group :test do
   gem 'capybara', '~>2.1.0'
 end
+
